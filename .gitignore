@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+
+# Local dev context (directory literally named ~)
+~/
+~
+
+# Sensitive files
+.env
+*.p8
+credentials.json
+
+# ClaudeKit — IDE tooling, not skill content
+.claude/
+release-manifest.json
+
+# Working plans — development artifacts, not skill content
+plans/
+
+# Local development instructions — not part of published skill
+CLAUDE.md
+.repomixignore
