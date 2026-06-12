@@ -26,26 +26,27 @@ quirks, and Rails/Propshaft traps that the official docs don't cover. Not a docs
 
 ## Install
 
-### Option A — copy to `~/.claude/skills/`
+### Claude Code plugin marketplace (recommended)
 
-```bash
-cp -r hotwire-native ~/.claude/skills/hotwire-native
+```
+/plugin install hotwire-native
 ```
 
-Claude Code loads skills from `~/.claude/skills/` automatically. The skill activates when
-you're working on a Hotwire Native project.
+Or browse via `/plugin > Discover` in Claude Code.
 
-### Option B — per-project symlink
+### Manual — copy to `~/.claude/skills/`
+
+```bash
+git clone https://github.com/cuongnc0211/hotwire-native-skill.git
+cp -r hotwire-native-skill/skills/hotwire-native ~/.claude/skills/hotwire-native
+```
+
+### Per-project symlink
 
 ```bash
 mkdir -p .claude/skills
-ln -s /path/to/hotwire-native .claude/skills/hotwire-native
+ln -s /path/to/hotwire-native-skill/skills/hotwire-native .claude/skills/hotwire-native
 ```
-
-### Option C — Claude Code plugin (`.claude/plugins/`)
-
-If you're distributing this inside an org via the Claude Code plugin marketplace, register
-it in your `marketplace.json`. The skill directory is the plugin root.
 
 ---
 
@@ -56,7 +57,7 @@ fast-path checklist, routing table, and top gotchas. Claude then loads individua
 from `references/` on demand as the question narrows.
 
 ```
-hotwire-native/
+skills/hotwire-native/
 ├── SKILL.md             # entry point — decision framework, routing table, top gotchas
 └── references/          # 13 task-focused files loaded on demand
     ├── rails-integration.md
